@@ -20,9 +20,10 @@ class Game {
     
     resize() {
         const container = document.getElementById('map-container');
-        const containerWidth = container.clientWidth || 320;
-        const containerHeight = container.clientHeight || 400;
-        const size = Math.min(containerWidth, containerHeight, 600);
+        const containerWidth = container.clientWidth || window.innerWidth;
+        const containerHeight = container.clientHeight || window.innerHeight * 0.5;
+        // 使用更大尺寸，填满可用空间
+        const size = Math.min(containerWidth, containerHeight);
         this.canvas.width = size;
         this.canvas.height = size;
         this.tileSize = Math.floor(size / Math.max(MAP_WIDTH, MAP_HEIGHT));
