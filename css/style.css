@@ -69,6 +69,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
 
 #message-log {
     height: 100px;
