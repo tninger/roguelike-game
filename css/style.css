@@ -98,16 +98,17 @@ body {
 #action-buttons {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 3px;
+    margin-bottom: 8px;
 }
 
 #action-buttons button {
-    padding: 4px 8px;
+    padding: 8px 16px;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     background: #0f3460;
     color: #fff;
-    font-size: 11px;
+    font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
     transition: all 0.2s;
 }
@@ -126,25 +127,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
-    padding: 2px 0;
+    gap: 8px;
+    padding: 10px 0;
 }
 
 .d-middle {
     display: flex;
-    gap: 15px;
+    gap: 40px;
 }
 
 .d-btn {
-    width: 28px;
-    height: 28px;
+    width: 56px;
+    height: 56px;
     border: none;
     border-radius: 50%;
     background: linear-gradient(145deg, #0f3460, #16213e);
     color: #fff;
-    font-size: 12px;
+    font-size: 24px;
     cursor: pointer;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     transition: all 0.1s;
 }
 
