@@ -20,10 +20,13 @@ class Game {
     
     resize() {
         const container = document.getElementById('map-container');
-        const size = Math.min(container.clientWidth, container.clientHeight);
+        const containerWidth = container.clientWidth || 320;
+        const containerHeight = container.clientHeight || 400;
+        const size = Math.min(containerWidth, containerHeight, 600);
         this.canvas.width = size;
         this.canvas.height = size;
         this.tileSize = Math.floor(size / Math.max(MAP_WIDTH, MAP_HEIGHT));
+        console.log('Canvas size:', size, 'Tile size:', this.tileSize);
     }
     
     init() {
@@ -49,11 +52,17 @@ class Game {
     // 渲染游戏
     render() {
         const ctx = this.ctx;
-        const ts = this.tileSize;
+        const ts = this.tileSize || 20;
         
         // 清空画布
         ctx.fillStyle = '#0f0f23';
         ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+        
+        // 调试信息
+        if (!this.renderedOnce) {
+            console.log('Rendering map, tileSize:', ts, 'canvas:', this.canvas.width, 'x', this.canvas.height);
+            this.renderedOnce = true;
+        }
         
         // 计算相机偏移
         const offsetX = (this.canvas.width - MAP_WIDTH * ts) / 2;
