@@ -215,28 +215,13 @@ class GameMap {
         return { x: firstRoom.cx, y: firstRoom.cy };
     }
     
-    // 更新视野
+    // 更新视野 - 取消战争迷雾，全地图可见
     updateVisibility(px, py, radius = 5) {
-        // 重置视野
+        // 全地图可见
         for (let y = 0; y < this.height; y++) {
             for (let x = 0; x < this.width; x++) {
-                this.visible[y][x] = false;
-            }
-        }
-        
-        // 圆形视野
-        for (let y = -radius; y <= radius; y++) {
-            for (let x = -radius; x <= radius; x++) {
-                const tx = px + x;
-                const ty = py + y;
-                
-                if (tx >= 0 && tx < this.width && ty >= 0 && ty < this.height) {
-                    const dist = Math.sqrt(x * x + y * y);
-                    if (dist <= radius) {
-                        this.visible[ty][tx] = true;
-                        this.explored[ty][tx] = true;
-                    }
-                }
+                this.visible[y][x] = true;
+                this.explored[y][x] = true;
             }
         }
     }
