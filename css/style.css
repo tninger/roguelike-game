@@ -24,21 +24,21 @@ body {
 #status-bar {
     display: flex;
     justify-content: space-around;
-    padding: 20px 10px;
+    padding: 12px 8px;
     background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
-    border-bottom: 4px solid #e94560;
-    font-size: 24px;
+    border-bottom: 3px solid #e94560;
+    font-size: 16px;
     font-weight: bold;
 }
 
 .stat {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
 }
 
 .stat .icon {
-    font-size: 28px;
+    font-size: 18px;
 }
 
 /* 地图区域 */
@@ -61,24 +61,23 @@ body {
 /* 控制区 */
 #controls {
     background: #16213e;
-    padding: 15px;
-    border-top: 4px solid #e94560;
+    padding: 10px;
+    border-top: 3px solid #e94560;
     flex: 1;
-    min-height: 45vh;
-    max-height: 50vh;
+    min-height: 40vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
 #message-log {
-    height: 100px;
+    height: 60px;
     background: rgba(0,0,0,0.3);
-    border-radius: 12px;
-    padding: 15px;
-    font-size: 16px;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 12px;
     overflow-y: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #message-log .message {
@@ -103,17 +102,16 @@ body {
 #action-buttons {
     display: flex;
     justify-content: space-around;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 #action-buttons button {
-    padding: 20px 25px;
+    padding: 10px 15px;
     border: none;
-    border-radius: 12px;
+    border-radius: 8px;
     background: #0f3460;
     color: #fff;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 14px;
     cursor: pointer;
     transition: all 0.2s;
 }
@@ -132,25 +130,25 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    padding: 15px 0;
+    gap: 8px;
+    padding: 5px 0;
 }
 
 .d-middle {
     display: flex;
-    gap: 80px;
+    gap: 40px;
 }
 
 .d-btn {
-    width: 90px;
-    height: 90px;
+    width: 50px;
+    height: 50px;
     border: none;
     border-radius: 50%;
     background: linear-gradient(145deg, #0f3460, #16213e);
     color: #fff;
-    font-size: 36px;
+    font-size: 20px;
     cursor: pointer;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
     transition: all 0.1s;
 }
 
