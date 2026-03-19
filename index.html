@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>地牢冒险 - Roguelike</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- 顶部状态栏 -->
+        <div id="status-bar">
+            <div class="stat">
+                <span class="icon">❤️</span>
+                <span id="hp">100/100</span>
+            </div>
+            <div class="stat">
+                <span class="icon">⚔️</span>
+                <span id="atk">10</span>
+            </div>
+            <div class="stat">
+                <span class="icon">🛡️</span>
+                <span id="def">5</span>
+            </div>
+            <div class="stat">
+                <span class="icon">⭐</span>
+                <span id="level">Lv.1</span>
+            </div>
+            <div class="stat">
+                <span class="icon">💰</span>
+                <span id="gold">0</span>
+            </div>
+        </div>
+
+        <!-- 游戏地图 -->
+        <div id="map-container">
+            <canvas id="game-canvas"></canvas>
+        </div>
+
+        <!-- 底部控制区 -->
+        <div id="controls">
+            <div id="message-log"></div>
+            <div id="action-buttons">
+                <button id="btn-attack">⚔️ 攻击</button>
+                <button id="btn-skill">🔥 技能</button>
+                <button id="btn-item">🎒 背包</button>
+                <button id="btn-rest">💤 休息</button>
+            </div>
+            <div id="d-pad">
+                <button class="d-btn" data-dir="up">⬆️</button>
+                <div class="d-middle">
+                    <button class="d-btn" data-dir="left">⬅️</button>
+                    <button class="d-btn" data-dir="right">➡️</button>
+                </div>
+                <button class="d-btn" data-dir="down">⬇️</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 模态窗口 -->
+    <div id="modal" class="hidden">
+        <div id="modal-content">
+            <h2 id="modal-title"></h2>
+            <div id="modal-body"></div>
+            <div id="modal-buttons"></div>
+        </div>
+    </div>
+
+    <!-- 游戏脚本 -->
+    <script src="js/items.js"></script>
+    <script src="js/skills.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/combat.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>
