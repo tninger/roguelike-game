@@ -43,13 +43,14 @@ body {
 
 /* 地图区域 */
 #map-container {
-    flex: 2;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     background: #0f0f23;
     overflow: hidden;
-    min-height: 50vh;
+    min-height: 40vh;
+    max-height: 45vh;
 }
 
 #game-canvas {
@@ -63,10 +64,11 @@ body {
     padding: 15px;
     border-top: 4px solid #e94560;
     flex: 1;
-    min-height: 35vh;
+    min-height: 45vh;
+    max-height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 
 #message-log {
     height: 100px;
