@@ -227,6 +227,33 @@ class UI {
         }
         content += '</div>';
         this.showModal('背包', content, [{ text: '关闭', close: true }]);
+        
+        // 添加点击事件 - 点击背包物品装备
+        this.modalBody.querySelectorAll('.inventory-item[data-index]').forEach(el => {
+            el.addEventListener('click', () => {
+                const index = parseInt(el.dataset.index);
+                const item = player.inventory[index];
+                if (item) {
+                    if (item.type === 'weapon' || item.type === 'armor' || item.type === 'accessory') {
+                        // 装备物品
+                        player.equipItem(item);
+                        // 从背包移除
+                        player.inventory.splice(index, 1);
+                        this.addMessage(`装备了 ${item.icon} ${item.name}`, 'loot');
+                        this.hideModal();
+                        this.updateStatusBar();
+                    } else if (item.type === 'consumable') {
+                        // 使用消耗品
+                        const result = player.useItem(item, index);
+                        if (result.success) {
+                            this.addMessage(result.message, 'heal');
+                            this.hideModal();
+                            this.updateStatusBar();
+                        }
+                    }
+                }
+            });
+        });
     }
     
     // 显示技能菜单
