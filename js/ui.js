@@ -225,3 +225,30 @@ class UI {
                 </div>
             `;
         }
+        content += '</div>';
+        this.showModal('背包', content, [{ text: '关闭', close: true }]);
+    }
+    
+    // 显示技能菜单
+    showSkillMenu() {
+        const player = this.game.player;
+        if (player.activeSkills.length === 0) {
+            this.addMessage('还没有学会任何技能！', 'important');
+            return;
+        }
+        
+        let content = '<div class="skill-selection">';
+        player.activeSkills.forEach(skill => {
+            const cooldown = player.skillCooldowns[skill.id] || 0;
+            content += `
+                <div class="skill-option">
+                    <div class="skill-name">${skill.icon} ${skill.name}</div>
+                    <div class="skill-desc">${skill.desc}</div>
+                    <div class="skill-cooldown">${cooldown > 0 ? '冷却: ' + cooldown + ' 回合' : '可用'}</div>
+                </div>
+            `;
+        });
+        content += '</div>';
+        this.showModal('技能', content, [{ text: '关闭', close: true }]);
+    }
+}

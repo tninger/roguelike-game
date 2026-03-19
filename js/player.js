@@ -287,4 +287,8 @@ class Player {
     // 移动到下一层
     nextFloor() {
         this.floor++;
-        // 恢复部分
+        // 恢复部分生命值
+        const heal = Math.floor(this.maxHp * 0.2);
+        this.hp = Math.min(this.hp + heal, this.maxHp);
+    }
+}

@@ -291,3 +291,9 @@ class GameMap {
         const tileSize = TILE_SIZE;
         
         for (let y = 0; y < this.height; y++) {
+            for (let x = 0; x < this.width; x++) {
+                // 简化的渲染逻辑
+            }
+        }
+    }
+}
